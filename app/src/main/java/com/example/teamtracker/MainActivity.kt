@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.logo_page.csiApp
 import com.example.teamtracker.logo_page.csiApp
+import com.example.teamtracker.screens.Loginpage
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
 import kotlinx.coroutines.Delay
@@ -29,7 +30,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                    AppNavigation()
+                    //AppNavigation()
+                    Loginpage()
                 }
 
 

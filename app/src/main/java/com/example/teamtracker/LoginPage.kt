@@ -1,5 +1,8 @@
 package com.example.teamtracker
 
+
+
+
 import android.os.Bundle
 import android.text.style.BackgroundColorSpan
 import androidx.activity.ComponentActivity
