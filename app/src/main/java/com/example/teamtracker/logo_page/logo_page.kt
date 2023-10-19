@@ -57,8 +57,8 @@ fun csiApp(navController: NavHostController) {
     val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(key1 = true) {
-        // Delay for 5 seconds
-        delay(3000)
+        // Delay for 2 seconds
+        delay(2000)
 
         // Navigate to the next screen
         navController.navigate("next_screen")
