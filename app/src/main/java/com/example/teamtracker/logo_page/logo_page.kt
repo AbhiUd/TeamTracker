@@ -58,7 +58,7 @@ fun csiApp(navController: NavHostController) {
 
     LaunchedEffect(key1 = true) {
         // Delay for 5 seconds
-        delay(3000)
+        delay(2000)
 
         // Navigate to the next screen
         navController.navigate("next_screen")
@@ -98,20 +98,6 @@ fun csiApp(navController: NavHostController) {
 
 
     }
-
-//    val navController = rememberNavController()
-//
-//    NavHost(
-//        navController = navController,
-//        startDestination = "splash_screen"
-//    ) {
-//        composable("splash_screen") {
-//            SplashScreen(navController = navController)
-//        }
-//        composable("next_screen") {
-//            NextScreen()
-//        }
-//    }
 
 }
 
