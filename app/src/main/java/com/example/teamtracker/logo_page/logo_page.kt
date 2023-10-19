@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,13 +22,48 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Cyan
+import kotlinx.coroutines.delay
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
+
 @Composable
-fun csiApp() {
+fun AppNavigation() {
+    val navController = rememberNavController()
+
+    NavHost(
+        navController = navController,
+        startDestination = "Logo_Page"
+    ) {
+        composable("Logo_Page") {
+            csiApp(navController = navController)
+        }
+        composable("next_screen") {
+            NextScreen()
+        }
+    }
+}
+
+@Composable
+fun csiApp(navController: NavHostController) {
+
+    val coroutineScope = rememberCoroutineScope()
+
+    LaunchedEffect(key1 = true) {
+        // Delay for 5 seconds
+        delay(3000)
+
+        // Navigate to the next screen
+        navController.navigate("next_screen")
+    }
+
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
@@ -61,6 +98,20 @@ fun csiApp() {
 
 
     }
+
+//    val navController = rememberNavController()
+//
+//    NavHost(
+//        navController = navController,
+//        startDestination = "splash_screen"
+//    ) {
+//        composable("splash_screen") {
+//            SplashScreen(navController = navController)
+//        }
+//        composable("next_screen") {
+//            NextScreen()
+//        }
+//    }
 
 }
 
