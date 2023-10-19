@@ -11,10 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.logo_page.csiApp
 import com.example.teamtracker.logo_page.csiApp
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
+import kotlinx.coroutines.Delay
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +28,12 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = Background
-                ){
-
+                ) {
+                    AppNavigation()
                 }
-                csiApp()
+
+
+
 
             }
         }
