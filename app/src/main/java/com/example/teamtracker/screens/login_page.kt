@@ -1,10 +1,7 @@
 package com.example.teamtracker.screens
 
-import android.graphics.drawable.Icon
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,7 +9,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -22,7 +18,6 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -41,10 +36,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.Visibility
+import androidx.navigation.NavController
 import com.example.teamtracker.R
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Btnbackground
@@ -53,7 +47,7 @@ import com.example.teamtracker.ui.theme.componentShapes
 
 
 @Composable
-fun Loginpage() {
+fun Loginpage(individual: String, navController: NavController) {
 
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -74,7 +68,9 @@ fun Loginpage() {
         Spacer(modifier = Modifier.height(30.dp))
         PasswordTextField(labelValue = "Password")
         Spacer(modifier = Modifier.height(40.dp))
-        ButtonComponent(value = stringResource(id = R.string.register))
+        ButtonComponent(
+            value = stringResource(id = R.string.register),
+            individual =individual, navController =navController)
         
         
 
@@ -188,8 +184,11 @@ fun PasswordTextField(labelValue: String) {
 
 
 @Composable
-fun ButtonComponent(value: String){
-    Button(onClick = {  },
+fun ButtonComponent(value: String, individual: String, navController: NavController){
+    Button(onClick = {
+                     if (individual=="Lead") navController.navigate("Lead_main_page")
+        else navController.navigate("Lead_main_page")
+    },
         modifier = Modifier
             .heightIn(57.dp)
             .width(239.dp),

@@ -2,14 +2,11 @@ package com.example.teamtracker.logo_page
 
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -22,17 +19,17 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
+import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.Loginpage
-import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Cyan
 import kotlinx.coroutines.delay
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 
 @Composable
@@ -49,11 +46,16 @@ fun AppNavigation() {
         composable("next_screen") {
             NextScreen(navController = navController)
         }
-        composable("Login_page") {
-            Loginpage()
+        composable("Volunteer_Login_page") {
+//            Loginpage(navController= NavController)
+            Loginpage(individual = "Volunteer", navController = navController )
         }
-        composable("Login_page") {
-            Loginpage()
+
+        composable("Lead_Login_page") {
+            Loginpage(individual = "Lead", navController = navController )
+        }
+        composable("Lead_main_page"){
+            Lead()
         }
     }
 }

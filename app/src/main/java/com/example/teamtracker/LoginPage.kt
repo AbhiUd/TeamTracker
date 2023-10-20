@@ -66,7 +66,7 @@ fun NextScreen(navController: NavController) {
                 ) {
                 Button(
                     onClick = {
-                        navController.navigate("Login_page")
+                        navController.navigate("Volunteer_Login_page")
                     },
                     modifier = Modifier
                         .width(133.dp)
@@ -91,7 +91,7 @@ fun NextScreen(navController: NavController) {
 
                 ) {
                 Button(onClick = {
-                    navController.navigate("Login_page")
+                    navController.navigate("Lead_Login_page")
                 }, modifier = Modifier
                     .width(133.dp)
                     .height(133.dp),
