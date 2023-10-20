@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.teamtracker.logo_page.AppNavigation
-import com.example.teamtracker.screens.lead
+import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
 
@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
 //                    Loginpage()
 
 
-                    lead()
+//                    Lead()
                 }
 
 
