@@ -44,6 +44,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.constraintlayout.compose.Visibility
 import com.example.teamtracker.R
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Btnbackground
