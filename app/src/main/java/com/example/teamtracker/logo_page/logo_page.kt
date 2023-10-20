@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
+import com.example.teamtracker.screens.Loginpage
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Cyan
 import kotlinx.coroutines.delay
@@ -46,7 +47,13 @@ fun AppNavigation() {
             csiApp(navController = navController)
         }
         composable("next_screen") {
-            NextScreen()
+            NextScreen(navController = navController)
+        }
+        composable("Login_page") {
+            Loginpage()
+        }
+        composable("Login_page") {
+            Loginpage()
         }
     }
 }
@@ -99,19 +106,6 @@ fun csiApp(navController: NavHostController) {
 
     }
 
-//    val navController = rememberNavController()
-//
-//    NavHost(
-//        navController = navController,
-//        startDestination = "splash_screen"
-//    ) {
-//        composable("splash_screen") {
-//            SplashScreen(navController = navController)
-//        }
-//        composable("next_screen") {
-//            NextScreen()
-//        }
-//    }
 
 }
 
