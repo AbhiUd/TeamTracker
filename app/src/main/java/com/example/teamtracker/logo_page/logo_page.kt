@@ -26,8 +26,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
+import com.example.teamtracker.screens.Attendance
 import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.Loginpage
+import com.example.teamtracker.screens.Sponsorship
+import com.example.teamtracker.screens.Sponsorship_details
+import com.example.teamtracker.screens.Volunteer
+import com.example.teamtracker.screens.approval
 import com.example.teamtracker.ui.theme.Cyan
 import kotlinx.coroutines.delay
 
@@ -55,7 +60,22 @@ fun AppNavigation() {
             Loginpage(individual = "Lead", navController = navController )
         }
         composable("Lead_main_page"){
-            Lead()
+            Lead(navController = navController)
+        }
+        composable("Volunteer_main_page"){
+            Volunteer(navController = navController)
+        }
+        composable("Attendance_Approval") {
+            approval(navController = navController )
+        }
+        composable("Sponsorship_Details") {
+            Sponsorship_details(navController = navController)
+        }
+        composable("Attendance") {
+            Attendance(navController = navController)
+        }
+        composable("Sponsorship") {
+            Sponsorship(navController = navController)
         }
     }
 }

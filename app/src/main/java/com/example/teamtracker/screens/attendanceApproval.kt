@@ -31,27 +31,19 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.teamtracker.R
 
 
 
 @Composable
-fun approval() {
+fun approval(navController: NavController) {
 
-    val names = listOf("Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Holly", "Ivy", "Jack")
-    val des = listOf("gsdlgbsdgohd;ohnafd;ohndfoanhoafdnbkafmblkafhkdjgbsdgbsdjgbskjgbksjdbglsdgblksdglg","fsdgsdjg","safgdgdsjkg","yfghdfbhadf","ksjdgjsdngjnsd","dskjghjsdgnsdjng","ughusdgsdg","kudfgbidgbkdbsg","asfgiuahtfg","dkgjdsgn")
+    val names = listOf("Omkar", "Abhishek", "Neel", "David", "Eve", "Frank", "Grace", "Holly", "Ivy", "Jack")
+    val des = listOf("Morning whispers, a sky ablaze with pink and gold. Birds sing, greeting a new day. The world awakens, a garden of endless possibilities.","Out for sponsporship purpose","My self APP","My self APP","My self APP","My self APP","My self APP","Out for sponsporship purpose","Out for sponsporship purpose","Out for sponsporship purpose")
     Column(horizontalAlignment = Alignment.Start) {
 
-
-        Image(
-            painter = painterResource(id = R.drawable.tt),
-            contentDescription = "Logo image only TT",
-            modifier = Modifier
-                .height(81.dp)
-                .width(99.dp)
-                .offset(0.dp, 10.dp)
-
-        )
+        TTLogo()
     }
 
 
@@ -61,15 +53,7 @@ fun approval() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(
-            text = "ATTENDANCE APPROVAL",
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 29.sp
-            ),
-            color = Color(0xFFAFF6FF),
-            modifier = Modifier.padding(top = 135.dp)
-        )
+        Heading(name = "ATTENDANCE APPROVAL")
 
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -104,6 +88,62 @@ fun approval() {
                 }
     }
 }
+
+@Composable
+fun Sponsorship_details(navController: NavController) {
+
+    Column(horizontalAlignment = Alignment.Start) {
+
+
+        TTLogo()
+    }
+
+
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Heading(name = "SPONSORSHIP DETAILS")
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Image(
+            painter = painterResource(id = R.drawable.sponsorshipcyan),
+            contentDescription = "",
+            modifier = Modifier
+                .width(58.dp)
+                .height(58.dp)
+        )
+        Spacer(modifier = Modifier.height(10.dp))
+        Box(
+            modifier = Modifier
+                .height(530.dp)
+                .width(380.dp)
+                .background(
+                    color = Color(0xFFBCBEFA)
+                ) ){
+
+        }
+    }
+}
+
+
+
+@Composable
+fun Heading(name: String){
+    Text(
+        text = name,
+        style = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontSize = 29.sp
+        ),
+        color = Color(0xFFAFF6FF),
+        modifier = Modifier.padding(top = 135.dp)
+    )
+}
+
 
 @Composable
 fun CustomTransparentButton(

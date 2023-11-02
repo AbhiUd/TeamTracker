@@ -187,7 +187,7 @@ fun PasswordTextField(labelValue: String) {
 fun ButtonComponent(value: String, individual: String, navController: NavController){
     Button(onClick = {
                      if (individual=="Lead") navController.navigate("Lead_main_page")
-        else navController.navigate("Lead_main_page")
+        else navController.navigate("Volunteer_main_page")
     },
         modifier = Modifier
             .heightIn(57.dp)

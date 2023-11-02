@@ -22,12 +22,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                  //  AppNavigation()
+                    AppNavigation()
 //                    Loginpage()
 
 
 //                    Lead()
-                    approval()
+//                    approval()
                 }
 
 

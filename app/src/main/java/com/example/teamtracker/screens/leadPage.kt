@@ -2,6 +2,7 @@ package com.example.teamtracker.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,13 +30,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.teamtracker.R
 import com.example.teamtracker.ui.theme.Cyan
 import com.example.teamtracker.ui.theme.SpanColor
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @Composable
-fun Lead () {
+fun Lead (navController: NavController) {
     Column(horizontalAlignment = Alignment.Start) {
         TTLogo()
         Spacer(modifier = Modifier.height(30.dp))
@@ -46,12 +48,45 @@ fun Lead () {
             modifier = Modifier.fillMaxWidth()
             ) {
 //            Spacer(modifier = Modifier.width(10.dp))
-            MainBox(name = "ATTENDANCE", painterResource = painterResource(id = R.drawable.attendance))
+            MainBox(name = "ATTENDANCE APPROVAL",
+                painterResource = painterResource(id = R.drawable.attendanceblack),
+                onClickListener={
+                navController.navigate("Attendance_Approval")
+                })
             Spacer(modifier = Modifier.width(30.dp))
-            MainBox(name = "SPONSORSHIP DETAILS", painterResource = painterResource(id = R.drawable.sponsorship))
+            MainBox(name = "SPONSORSHIP DETAILS", painterResource = painterResource(id = R.drawable.sponsorship),
+                onClickListener={
+                    navController.navigate("Sponsorship_Details")
+                })
         }
     }
 }
+@Composable
+fun Volunteer (navController: NavController) {
+    Column(horizontalAlignment = Alignment.Start) {
+        TTLogo()
+        Spacer(modifier = Modifier.height(30.dp))
+        Hello("Volunteer")
+        Spacer(modifier = Modifier.height(60.dp))
+
+        Row(horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+//            Spacer(modifier = Modifier.width(10.dp))
+            MainBox(name = "ATTENDANCE",
+                painterResource = painterResource(id = R.drawable.attendanceblack),
+                onClickListener={
+                    navController.navigate("Attendance")
+                })
+            Spacer(modifier = Modifier.width(30.dp))
+            MainBox(name = "SPONSORSHIP", painterResource = painterResource(id = R.drawable.sponsorship),
+                onClickListener={
+                    navController.navigate("Sponsorship")
+                })
+        }
+    }
+}
+
 
 @Composable
 fun TTLogo(){
@@ -89,12 +124,13 @@ fun Hello(Name: String){
 }
 
 @Composable
-fun MainBox(name: String,painterResource: Painter ){
+fun MainBox(name: String,painterResource: Painter , onClickListener:()->Unit){
     Box(
         modifier = Modifier
             .height(145.dp)
             .width(153.dp)
-            .background(color = Cyan, shape = RoundedCornerShape(16.dp)),
+            .background(color = Cyan, shape = RoundedCornerShape(16.dp))
+            .clickable { onClickListener() },
         contentAlignment = Alignment.Center
     ) {
 
