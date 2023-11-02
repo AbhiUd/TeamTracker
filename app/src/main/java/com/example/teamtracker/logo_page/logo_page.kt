@@ -74,7 +74,7 @@ fun AppNavigation() {
         composable("Attendance") {
             Attendance(navController = navController)
         }
-        composable("Sponsorship") {
+        composable("") {
             Sponsorship(navController = navController)
         }
     }
