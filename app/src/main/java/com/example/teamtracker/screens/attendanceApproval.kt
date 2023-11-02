@@ -137,7 +137,7 @@ fun Heading(name: String){
         text = name,
         style = TextStyle(
             fontWeight = FontWeight.Bold,
-            fontSize = 29.sp
+            fontSize = 32.sp
         ),
         color = Color(0xFFAFF6FF),
         modifier = Modifier.padding(top = 135.dp)

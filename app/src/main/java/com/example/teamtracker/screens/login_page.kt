@@ -211,5 +211,3 @@ fun ButtonComponent(value: String, individual: String, navController: NavControl
         }
     }
 }
-
-//@Preview

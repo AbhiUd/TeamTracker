@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.approval
+import com.example.teamtracker.screens.publicity
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
 
@@ -22,10 +23,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                    AppNavigation()
+                  // AppNavigation()
 //                    Loginpage()
-
-
+                    publicity()
+//
 //                    Lead()
 //                    approval()
                 }
