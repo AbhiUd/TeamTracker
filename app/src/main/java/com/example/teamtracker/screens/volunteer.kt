@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.teamtracker.R
+import com.example.teamtracker.components.PageIcon
 
 @Composable
 fun Sponsorship(navController: NavController){
@@ -36,13 +37,8 @@ fun Sponsorship(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Image(
-            painter = painterResource(id = R.drawable.attendance),
-            contentDescription = "",
-            modifier = Modifier
-                .width(58.dp)
-                .height(58.dp)
-        )
+        PageIcon(painterResource = painterResource(id = R.drawable.sponsorshipcyan))
+        
         Spacer(modifier = Modifier.height(10.dp))
         Box(
             modifier = Modifier
@@ -77,13 +73,8 @@ fun Attendance(navController: NavController) {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Image(
-            painter = painterResource(id = R.drawable.sponsorshipcyan),
-            contentDescription = "",
-            modifier = Modifier
-                .width(58.dp)
-                .height(58.dp)
-        )
+        PageIcon(painterResource = painterResource(id = R.drawable.attendance))
+        
         Spacer(modifier = Modifier.height(10.dp))
         Box(
             modifier = Modifier
