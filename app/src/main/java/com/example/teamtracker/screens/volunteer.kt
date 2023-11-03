@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.teamtracker.R
 import com.example.teamtracker.components.PageIcon
-import com.example.teamtracker.ui.theme.Browny
+import com.example.teamtracker.ui.theme.bhura
 
 @Composable
 fun Sponsorship(navController: NavController){
@@ -99,7 +99,7 @@ fun Attendance(navController: NavController) {
                     .fillMaxSize()
                     .padding(top = 10.dp)) {
                 Box(modifier = Modifier
-                    .background(color = Browny, shape = RoundedCornerShape(10.dp))
+                    .background(color = bhura, shape = RoundedCornerShape(10.dp))
                     .width(322.dp)
                     .height(51.dp)
 
@@ -108,7 +108,7 @@ fun Attendance(navController: NavController) {
                 }
                 Spacer(modifier = Modifier.height(15.dp))
                 Box(modifier = Modifier
-                    .background(color = Browny, shape = RoundedCornerShape(10.dp))
+                    .background(color = bhura, shape = RoundedCornerShape(10.dp))
                     .width(322.dp)
                     .height(51.dp)
 
@@ -117,7 +117,7 @@ fun Attendance(navController: NavController) {
                 }
                 Spacer(modifier = Modifier.height(15.dp))
                 Box(modifier = Modifier
-                    .background(color = Browny, shape = RoundedCornerShape(10.dp))
+                    .background(color = bhura, shape = RoundedCornerShape(10.dp))
                     .width(322.dp)
                     .height(51.dp)
 
@@ -148,7 +148,7 @@ fun AbsenceBox(reason: String){
     Box(modifier = Modifier
         .height(54.dp)
         .width(323.dp)
-        .background(color = Browny, shape = RoundedCornerShape(15.dp))){
+        .background(color = bhura, shape = RoundedCornerShape(15.dp))){
         Text(text = reason, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 5.dp).offset(5.dp,8.dp))
     }
 }
