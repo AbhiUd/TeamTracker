@@ -13,4 +13,5 @@ val Background= Color(0xFF050331)
 val Cyan = Color(0xFFAFF6FF)
 val SpanColor = Color(0xFF3AE1FF)
 val Btnbackground = Color(0xFFD9D9D9)
+val bhura = Color(0xFFBBBBBB)
 

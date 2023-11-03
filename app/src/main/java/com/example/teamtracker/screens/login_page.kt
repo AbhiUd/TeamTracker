@@ -64,7 +64,7 @@ fun Loginpage(individual: String, navController: NavController) {
         )
         Spacer(modifier = Modifier.height(30.dp))
 
-        MyTextField(labelValue = "Login Id")
+        MyTextField(labelValue = "Login Id",2)
         Spacer(modifier = Modifier.height(30.dp))
         PasswordTextField(labelValue = "Password")
         Spacer(modifier = Modifier.height(40.dp))
@@ -82,9 +82,9 @@ fun Loginpage(individual: String, navController: NavController) {
 
 
 
-@Composable
+/*@Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun MyTextField(labelValue: String) {
+fun MyTextField(labelValue: String,value : Int) {
     val textValue = remember {
         mutableStateOf("")
     }
@@ -117,9 +117,56 @@ fun MyTextField(labelValue: String) {
             onValueChange = {
                 textValue.value = it
             },
+            maxLines = value
         )
     }
+}*/
+
+
+
+
+@Composable
+@OptIn(ExperimentalMaterial3Api::class)
+fun MyTextField(labelValue: String , value : Int) {
+    val textValue = remember {
+        mutableStateOf("")
+    }
+
+    Column(
+        modifier = Modifier
+            .width(350.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    color = Btnbackground,
+                    shape = RoundedCornerShape(8.dp)
+                )
+        ) {
+            OutlinedTextField(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 68.dp), // Allow vertical expansion
+                label = { Text(text = labelValue,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp) },
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = Btnbackground,
+                    focusedLabelColor = Background,
+                    cursorColor = Btnbackground
+                ),
+                keyboardOptions = KeyboardOptions.Default,
+                value = textValue.value,
+                onValueChange = {
+                    textValue.value = it
+                },
+                maxLines = value
+            )
+        }
+    }
 }
+
 
 
 @Composable

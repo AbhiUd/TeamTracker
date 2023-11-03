@@ -10,6 +10,8 @@ import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.approval
 import com.example.teamtracker.screens.publicity
+import com.example.teamtracker.screens.sponsorship
+import com.example.teamtracker.screens.target
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
 
@@ -23,12 +25,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                  // AppNavigation()
+//                   AppNavigation()
 //                    Loginpage()
-                    publicity()
-//
+//                    publicity()
+//                    sponsorship()
 //                    Lead()
 //                    approval()
+                    target()
                 }
 
 
