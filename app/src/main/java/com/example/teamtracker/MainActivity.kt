@@ -8,9 +8,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.screens.Lead
-import com.example.teamtracker.screens.ShowTimePicker
 import com.example.teamtracker.screens.approval
-import com.example.teamtracker.screens.showDatePicker
+import com.example.teamtracker.screens.publicity
+import com.example.teamtracker.screens.sponsorship
+import com.example.teamtracker.screens.target
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
 
@@ -24,15 +25,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                   AppNavigation()
+//                   AppNavigation()
 //                    Loginpage()
 //                    publicity()
-
-
-//                    ShowTimePicker()
-//                    showDatePicker(context = this)
+//                    sponsorship()
 //                    Lead()
 //                    approval()
+                    target()
                 }
 
 
