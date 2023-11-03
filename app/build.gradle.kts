@@ -30,6 +30,7 @@ android {
         }
     }
     compileOptions {
+
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -83,5 +84,7 @@ dependencies {
 
     implementation("androidx.compose.material:material-icons-extended-android:1.5.4")
     implementation ("androidx.compose.ui:ui:x.x.x")
+    implementation ("io.github.vanpra.compose-material-dialogs:datetime:0.8.1-rc")
 
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:1.1.6")
 }
