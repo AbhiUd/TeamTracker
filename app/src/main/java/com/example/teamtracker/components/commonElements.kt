@@ -19,7 +19,8 @@ import androidx.compose.ui.unit.sp
 import com.example.teamtracker.R
 import org.w3c.dom.Text
 import java.time.format.TextStyle
-
+val names = listOf("Omkar", "Abhishek", "Neel", "David", "Eve", "Frank", "Grace", "Holly", "Ivy", "Jack")
+val des = listOf("Morning whispers, a sky ablaze with pink and gold. Birds sing, greeting a new day. The world awakens, a garden of endless possibilities.","Out for sponsporship purpose","My self APP","My self APP","My self APP","My self APP","My self APP","Out for sponsporship purpose","Out for sponsporship purpose","Out for sponsporship purpose")
 @Composable
 fun element(value : String){ Text(
             text = value,

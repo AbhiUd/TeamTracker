@@ -16,9 +16,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -34,13 +36,17 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.teamtracker.R
 import com.example.teamtracker.components.PageIcon
+import com.example.teamtracker.components.des
+import com.example.teamtracker.components.names
 
 
 @Composable
 fun approval(navController: NavController) {
+    val approvedNames = remember { mutableStateListOf<String>() }
+    val disapprovedNames = remember { mutableStateListOf<String>() }
 
-    val names = listOf("Omkar", "Abhishek", "Neel", "David", "Eve", "Frank", "Grace", "Holly", "Ivy", "Jack")
-    val des = listOf("Morning whispers, a sky ablaze with pink and gold. Birds sing, greeting a new day. The world awakens, a garden of endless possibilities.","Out for sponsporship purpose","My self APP","My self APP","My self APP","My self APP","My self APP","Out for sponsporship purpose","Out for sponsporship purpose","Out for sponsporship purpose")
+
+
     Column(horizontalAlignment = Alignment.Start) {
 
         TTLogo()
@@ -74,19 +80,25 @@ fun approval(navController: NavController) {
                         LazyColumn(
                             content = {
                                 items(names.size) { index ->
-                                    rejected(name = names[index], description = des[index] )
+                                    choice(name = names[index]
+                                        , description = des[index]
+                                        , approvedNames = approvedNames,
+                                        disapprovedNames = disapprovedNames)
                                 }
                             }
                         )
 
                     }
                 }
+        ApprovedList(approvedNames)
+        DisapprovedList(disapprovedNames)
     }
+
+
 }
 
 @Composable
 fun Sponsorship_details(navController: NavController) {
-
     Column(horizontalAlignment = Alignment.Start) {
 
 
@@ -172,7 +184,7 @@ fun CustomTransparentButton(
 }
 
 @Composable
-fun rejected(name: String, description: String) {
+fun choice(name: String, description: String, approvedNames: MutableList<String>,disapprovedNames: MutableList<String>) {
     CustomTransparentButton(name = name, description = description) { isVisible ->
         Box(
             modifier = Modifier
@@ -204,9 +216,9 @@ fun rejected(name: String, description: String) {
 
             }
             Row (Modifier.offset(250.dp)) {
-                atend(onClickListener = { /*TODO*/ })
+                atend(onClickListener = { approvedNames.add(name) })
                 Spacer(modifier = Modifier.width(8.dp))
-                cross(onClickListener = { /*TODO*/ })
+                cross(onClickListener = { disapprovedNames.add(name) })
             }
 
         }
@@ -216,8 +228,9 @@ fun rejected(name: String, description: String) {
 
 
 @Composable
-fun atend(onClickListener:()->Unit ,
-         modifier: Modifier = Modifier){
+fun atend(
+    onClickListener:()->Unit,
+    modifier: Modifier = Modifier){
     Box(modifier = modifier
         .clip(RoundedCornerShape(5.dp))
         .background(Color.Transparent)
@@ -231,7 +244,6 @@ fun atend(onClickListener:()->Unit ,
                 .size(41.dp)
         )
     }
-
 }
 
 

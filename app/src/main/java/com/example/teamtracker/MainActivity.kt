@@ -1,19 +1,16 @@
 package com.example.teamtracker
 
+import SponStud
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.teamtracker.logo_page.AppNavigation
-import com.example.teamtracker.screens.Lead
-import com.example.teamtracker.screens.approval
-import com.example.teamtracker.screens.publicity
-import com.example.teamtracker.screens.sponsorship
-import com.example.teamtracker.screens.target
+import com.example.teamtracker.components.names
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
+import org.w3c.dom.NameList
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +22,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-//                   AppNavigation()
-//                    Loginpage()
-//                    publicity()
-//                    sponsorship()
-//                    Lead()
-//                    approval()
-                    target()
+//                    AppNavigation()
+//                    target()
+//                    Details()
+                    SponStud()
                 }
 
 

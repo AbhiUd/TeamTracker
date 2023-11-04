@@ -14,4 +14,6 @@ val Cyan = Color(0xFFAFF6FF)
 val SpanColor = Color(0xFF3AE1FF)
 val Btnbackground = Color(0xFFD9D9D9)
 val bhura = Color(0xFFBBBBBB)
-
+val PickerBg = Color(0xFF8CB1E9)
+val submit = Color(0xFFA2B7D6)
+val brown = Color(0xFFAD9595)
