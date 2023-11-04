@@ -1,11 +1,11 @@
 package com.example.teamtracker.screens
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.Card
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.runtime.*
@@ -43,7 +42,7 @@ fun aggregate() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 50.dp),
+            .padding(top = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
@@ -59,10 +58,14 @@ fun aggregate() {
             Column (
                 modifier = Modifier.padding(10.dp)
             ){
+                MyTextField("Description :- " ,5 )
                 entry("Target :-")
                 entry(labelText = "Aggregate  :- ")
             }
+
         }
+
+            Submit()
     }
 }
 
