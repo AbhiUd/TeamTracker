@@ -70,8 +70,7 @@ fun commonbox2(value: String,content: @Composable () -> Unit) {
 
 @Composable
 fun seenToLead() {
-    Column(modifier = Modifier.padding(top = 40.dp)) {
-
+    Column(modifier = Modifier.padding(top = 20.dp)) {
         Box("Target :-")
         Box(value = "Aggregate:-")
         Box(value = "Deficit :-")

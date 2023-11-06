@@ -1,6 +1,7 @@
 package com.example.teamtracker.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -53,6 +54,7 @@ fun Sponsorship(navController: NavController){
                 .background(
                     color = Color(0xFFBCBEFA)
                 ) ){
+
 
 
         }
@@ -127,9 +129,13 @@ fun Attendance(navController: NavController) {
                 Spacer(modifier = Modifier.height(10.dp))
                 Text(text = "Select reason for absence", fontSize = 22.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(10.dp))
-                AbsenceBox(reason = "Publicity / Awareness")
+                AbsenceBox(reason = "Publicity / Awareness",onClickListener={
+                    navController.navigate("Publicity")
+                })
                 Spacer(modifier = Modifier.height(5.dp))
-                AbsenceBox(reason ="Sponsorship")
+                AbsenceBox(reason ="Sponsorship",onClickListener={
+                    navController.navigate("Sponsorship(Seeking)")
+                })
 
 //                DateBox(showDatePicker())
 //                DateBox(ShowTimePicker())
@@ -144,13 +150,13 @@ fun Attendance(navController: NavController) {
 
 
 @Composable
-fun AbsenceBox(reason: String){
+fun AbsenceBox(reason: String,onClickListener:()->Unit){
     Box(modifier = Modifier
         .height(54.dp)
         .width(323.dp)
-        .background(color = bhura, shape = RoundedCornerShape(15.dp))){
+        .background(color = bhura, shape = RoundedCornerShape(15.dp))
+        .clickable { onClickListener() }){
         Text(text = reason, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 5.dp).offset(5.dp,8.dp))
     }
 }
-
 

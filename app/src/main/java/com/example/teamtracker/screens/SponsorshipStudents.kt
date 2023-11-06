@@ -22,6 +22,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.teamtracker.R
 import com.example.teamtracker.components.des
 import com.example.teamtracker.components.names
@@ -32,13 +33,15 @@ import com.example.teamtracker.screens.commonbox2
 import com.example.teamtracker.screens.cross
 
 @Composable
-fun SponStud()
+fun SponStud(navController: NavController)
 {
     commonbox2(value = "SPONSORSHIPS DETAILS") {
         LazyColumn(
             content = {
                 items(names.size) { index ->
-                    CustomListButton(names[index]) { /* do nothing */ }
+                    CustomListButton(names[index]) {
+                        navController.navigate("next_page/${it}")
+                    }
                 }
 
             }
@@ -48,10 +51,10 @@ fun SponStud()
 }
 
 @Composable
-fun CustomListButton(text: String, onClick: (Boolean) -> Unit) {
+fun CustomListButton(text: String, onClick: (String) -> Unit) {
     Box(
         modifier = Modifier
-            .clickable {  onClick(true) }
+            .clickable {  onClick(text) }
             .width(375.dp)
             .padding(top = 10.dp)
             .height(66.dp)

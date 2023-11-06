@@ -25,19 +25,20 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.runtime.*
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.navigation.NavController
 
 
 @Composable
-fun target(){
+fun target(navController: NavController,selector: String){
 
     commonbox(value = "Sponsorship") {
-        aggregate()
+        aggregate(navController,selector)
     }
 }
 
 
 @Composable
-fun aggregate() {
+fun aggregate(navController: NavController,selector: String) {
 
     Column(
         modifier = Modifier
@@ -58,14 +59,19 @@ fun aggregate() {
             Column (
                 modifier = Modifier.padding(10.dp)
             ){
-                MyTextField("Description :- " ,5 )
-                entry("Target :-")
-                entry(labelText = "Aggregate  :- ")
+                if(selector=="AttSee"){
+                    MyTextField("Description :- " ,8)
+                }
+                else{
+                    MyTextField("Description :- " ,5 )
+                    entry("Target :-")
+                    entry(labelText = "Aggregate  :- ")
+                }
             }
 
         }
 
-            Submit()
+            Submit(navController)
     }
 }
 

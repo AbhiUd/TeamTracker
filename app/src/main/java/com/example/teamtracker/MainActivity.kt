@@ -7,10 +7,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.teamtracker.components.names
+import com.example.teamtracker.logo_page.AppNavigation
+import com.example.teamtracker.screens.Details
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
-import org.w3c.dom.NameList
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +22,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-//                    AppNavigation()
+                    AppNavigation()
 //                    target()
 //                    Details()
-                    SponStud()
+//                    SponStud()
+//                    Details()
                 }
 
 

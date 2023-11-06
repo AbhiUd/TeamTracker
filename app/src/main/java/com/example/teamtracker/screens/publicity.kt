@@ -21,14 +21,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.teamtracker.ui.theme.bhura
 import com.example.teamtracker.ui.theme.submit
 
 
 @Composable
-fun publicity() {
+fun publicity(navController: NavController) {
     commonbox(value = "Publicity/Awareness") {
-        publicityBox()
+        publicityBox(navController)
     }
 }
 
@@ -60,7 +61,7 @@ fun commonbox(value: String, content: @Composable () -> Unit) {
 }
 
 @Composable
-fun publicityBox() {
+fun publicityBox(navController: NavController) {
     Column (modifier = Modifier
         .fillMaxSize()
         .padding(top = 50.dp),
@@ -89,13 +90,13 @@ fun publicityBox() {
         }
 
     Spacer(modifier = Modifier.height(40.dp))
-Submit()
+Submit(navController)
 }
 
 
 
 @Composable
-fun Submit()
+fun Submit(navController: NavController)
 {
     Box(modifier = Modifier
         .fillMaxSize()
@@ -104,7 +105,7 @@ fun Submit()
     )
     {
         Button(
-            onClick = {},
+            onClick = {navController.navigate("Volunteer_main_page")},
             modifier = Modifier
                 .heightIn(57.dp)
                 .width(239.dp),

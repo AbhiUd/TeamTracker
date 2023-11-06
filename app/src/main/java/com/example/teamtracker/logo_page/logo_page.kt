@@ -1,6 +1,7 @@
 package com.example.teamtracker.logo_page
 
 
+import SponStud
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,18 +22,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
 import com.example.teamtracker.screens.Attendance
+import com.example.teamtracker.screens.Details
 import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.Loginpage
 import com.example.teamtracker.screens.Sponsorship
 import com.example.teamtracker.screens.Sponsorship_details
 import com.example.teamtracker.screens.Volunteer
 import com.example.teamtracker.screens.approval
+import com.example.teamtracker.screens.publicity
+import com.example.teamtracker.screens.sponsorship
+import com.example.teamtracker.screens.target
 import com.example.teamtracker.ui.theme.Cyan
 import kotlinx.coroutines.delay
 
@@ -69,14 +76,35 @@ fun AppNavigation() {
             approval(navController = navController )
         }
         composable("Sponsorship_Details") {
-            Sponsorship_details(navController = navController)
+            SponStud(navController = navController)
         }
         composable("Attendance") {
             Attendance(navController = navController)
         }
         composable("Sponsorship") {
-            Sponsorship(navController = navController)
+            sponsorship(navController = navController,"Volunteer")
         }
+        composable("Publicity") {
+            publicity(navController = navController)
+        }
+        composable("Sponsorship(Seeking)") {
+            sponsorship(navController = navController,"Seeking")
+        }
+        composable("Target") {
+            target(navController = navController, "AttSee")
+        }
+        composable("Sponsorship Volunteer") {
+            sponsorship(navController = navController,"Volunteer")
+        }
+        composable("TargetVol") {
+            target(navController = navController, "")
+        }
+        composable("next_page/{buttonText}", arguments = listOf(navArgument("buttonText") { type = NavType.StringType })) { navBackStackEntry ->
+            val buttonText = navBackStackEntry.arguments?.getString("buttonText") ?: ""
+            // Use the buttonText to determine which button was clicked, and display the appropriate content
+            Details()
+        }
+
     }
 }
 
