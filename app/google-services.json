@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "406445624562",
+    "project_id": "team-tracker-f237b",
+    "storage_bucket": "team-tracker-f237b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406445624562:android:4209c9c285318cf052946b",
+        "android_client_info": {
+          "package_name": "com.example.teamtracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_3Py4bhcXxFR4rTRwoxweIosw7_sVH4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

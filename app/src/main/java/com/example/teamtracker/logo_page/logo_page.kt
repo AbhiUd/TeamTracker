@@ -3,11 +3,16 @@ package com.example.teamtracker.logo_page
 
 import SponStud
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,6 +20,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -29,8 +35,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.teamtracker.NextScreen
 import com.example.teamtracker.R
+import com.example.teamtracker.screens.ApprovedList
 import com.example.teamtracker.screens.Attendance
 import com.example.teamtracker.screens.Details
+import com.example.teamtracker.screens.DisApprovedList
+import com.example.teamtracker.screens.DisapprovedList
 import com.example.teamtracker.screens.Lead
 import com.example.teamtracker.screens.Loginpage
 import com.example.teamtracker.screens.Sponsorship
@@ -40,7 +49,9 @@ import com.example.teamtracker.screens.approval
 import com.example.teamtracker.screens.publicity
 import com.example.teamtracker.screens.sponsorship
 import com.example.teamtracker.screens.target
+import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.Cyan
+import com.example.teamtracker.ui.theme.SpanColor
 import kotlinx.coroutines.delay
 
 
@@ -104,6 +115,15 @@ fun AppNavigation() {
             // Use the buttonText to determine which button was clicked, and display the appropriate content
             Details()
         }
+        composable("Approved Attendance"){
+            ApprovedList(approvedNames = ApprovedList)
+        }
+        composable("Disapproved Attendance"){
+            DisapprovedList(disapprovedNames = DisApprovedList)
+        }
+        composable("LogOut"){
+            NextScreen(navController = navController)
+        }
 
     }
 }
@@ -159,4 +179,23 @@ fun csiApp(navController: NavHostController) {
 
 }
 
+
+@Composable
+fun LogOut(navController: NavController) {
+    Button(
+        onClick = { navController.navigate("LogOut") },
+        modifier = Modifier
+            .border(2.dp, color = SpanColor, shape = RoundedCornerShape(20.dp)),
+        colors = ButtonDefaults.buttonColors(Background)
+
+    ) {
+        Text(
+            text = "Log Out",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Medium,
+            color = SpanColor,
+            modifier = Modifier.padding(8.dp) // Add padding for better appearance
+        )
+    }
+}
 

@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ApprovedList(approvedNames: List<String>) {
-    commonbox(value ="Aproved Students" ) {
+    commonbox(value ="Approved Students" ) {
 
 
         Column {

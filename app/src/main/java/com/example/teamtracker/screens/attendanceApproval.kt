@@ -40,6 +40,10 @@ import com.example.teamtracker.components.des
 import com.example.teamtracker.components.names
 
 
+
+
+var ApprovedList = listOf<String>()
+var DisApprovedList = listOf<String>()
 @Composable
 fun approval(navController: NavController) {
     val approvedNames = remember { mutableStateListOf<String>() }
@@ -90,8 +94,10 @@ fun approval(navController: NavController) {
 
                     }
                 }
-        ApprovedList(approvedNames)
-        DisapprovedList(disapprovedNames)
+//        ApprovedList(approvedNames)
+//        DisapprovedList(disapprovedNames)
+        ApprovedList=approvedNames
+        DisApprovedList =disapprovedNames
     }
 
 

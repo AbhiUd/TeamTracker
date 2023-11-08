@@ -9,12 +9,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -32,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.teamtracker.R
+import com.example.teamtracker.logo_page.LogOut
 import com.example.teamtracker.ui.theme.Cyan
 import com.example.teamtracker.ui.theme.SpanColor
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
@@ -39,7 +42,12 @@ import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 @Composable
 fun Lead (navController: NavController) {
     Column(horizontalAlignment = Alignment.Start) {
-        TTLogo()
+        Row(modifier = Modifier.fillMaxWidth()) {
+            TTLogo()
+            Spacer(modifier = Modifier.width(200.dp))
+            LogOut(navController = navController)
+        }
+
         Spacer(modifier = Modifier.height(30.dp))
         Hello("Lead")
         Spacer(modifier = Modifier.height(60.dp))
@@ -59,12 +67,26 @@ fun Lead (navController: NavController) {
                     navController.navigate("Sponsorship_Details")
                 })
         }
+
+        Column(modifier = Modifier.offset(15.dp,20.dp)) {
+            Button(onClick = { navController.navigate("Approved Attendance") }) {
+                Text(text = "Approved Attendance")
+            }
+            Button(onClick = { navController.navigate("Disapproved Attendance") }) {
+                Text(text = "Disapproved Attendance")
+            }
+
+        }
     }
 }
 @Composable
 fun Volunteer (navController: NavController) {
     Column(horizontalAlignment = Alignment.Start) {
-        TTLogo()
+        Row(modifier = Modifier.fillMaxWidth()) {
+            TTLogo()
+            Spacer(modifier = Modifier.width(200.dp))
+            LogOut(navController = navController)
+        }
         Spacer(modifier = Modifier.height(30.dp))
         Hello("Volunteer")
         Spacer(modifier = Modifier.height(60.dp))

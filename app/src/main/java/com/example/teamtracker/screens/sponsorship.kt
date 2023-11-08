@@ -31,7 +31,7 @@ fun sponsorship(navController: NavController,page: String) {
             options("FOOD",navController,page)
             options("EDUCATIONAL",navController,page)
             options("PROMOTION",navController,page)
-            options("NO SPONSORSHIP",navController,page)
+            options("OTHERS",navController,page)
         }
     }
 }

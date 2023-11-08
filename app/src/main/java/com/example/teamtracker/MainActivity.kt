@@ -11,8 +11,14 @@ import com.example.teamtracker.logo_page.AppNavigation
 import com.example.teamtracker.screens.Details
 import com.example.teamtracker.ui.theme.Background
 import com.example.teamtracker.ui.theme.TeamTrackerTheme
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : ComponentActivity() {
+
+
+//    val firebase: DatabaseReference= FirebaseDatabase.getInstance().getReference()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

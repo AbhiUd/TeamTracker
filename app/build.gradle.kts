@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -50,11 +51,28 @@ android {
     }
 }
 
+
+
+dependencies {
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+}
+
+
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.7.2")
+    implementation("androidx.activity:activity-compose:1.8.0")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -73,18 +91,20 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation("androidx.navigation:navigation-compose:2.7.4")
+    implementation("androidx.navigation:navigation-compose:2.7.5")
 
     implementation ("androidx.activity:activity-compose:1.3.0")
     implementation ("androidx.compose.ui:ui:1.0.3")
     implementation ("androidx.compose.material:material:1.0.3")
     implementation ("androidx.compose.material3:material3:1.0.0-beta01")
     implementation ("androidx.compose.ui:ui-tooling:1.0.3")
-    implementation ("androidx.navigation:navigation-compose:2.4.0-alpha09")
+    implementation ("androidx.navigation:navigation-compose:2.7.5")
 
     implementation("androidx.compose.material:material-icons-extended-android:1.5.4")
     implementation ("androidx.compose.ui:ui:x.x.x")
     implementation ("io.github.vanpra.compose-material-dialogs:datetime:0.8.1-rc")
 
-    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:1.1.6")
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation("com.google.firebase:firebase-database")
 }
